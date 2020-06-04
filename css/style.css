@@ -448,6 +448,7 @@ table {
 }
 
 body {
+  overflow: auto;
   font-family: "Lato-Regular", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -620,20 +621,27 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 82px 0px 75px 0px;
 }
 
 .about-intro {
-  padding: 47px 50px 0px 0px;
+  width: 43%;
+  padding-top: 10px;
 }
 
 .about-intro__sub {
+  padding: 44px 0px 0px 0px;
   font-size: 22px;
+  line-height: 25px;
 }
 
 .about-intro__text {
-  padding: 30px 0px 30px 0px;
-  line-height: 2;
+  padding: 32px 0px 37px 0px;
+  line-height: 26px;
+  letter-spacing: 0.3px;
 }
 
 .about-intro__link {
@@ -645,7 +653,7 @@ a:hover {
 }
 
 .about-title {
-  padding: 0px 0px 0px 0px;
+  padding: 2px 0px 0px 0px;
   text-align: center;
 }
 
@@ -661,15 +669,22 @@ a:hover {
 }
 
 .about-title::after {
-  margin: 0px 0px 0px 0px;
+  margin: 0px;
+}
+
+.about-video {
+  width: 49.2%;
 }
 
 .videos {
-  width: 560px;
+  width: 100%;
+  height: 72%;
 }
 
 .video {
   display: none;
+  width: 100%;
+  height: 100%;
 }
 
 .video.active {
@@ -677,12 +692,12 @@ a:hover {
 }
 
 iframe {
-  width: 560px;
-  height: 315px;
+  width: 100%;
+  height: 100%;
 }
 
 .thumbnails {
-  width: 560px;
+  width: 100%;
   margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -691,8 +706,8 @@ iframe {
 }
 
 .thumb {
-  width: 172px;
-  margin: 0px 28px 0px 0px;
+  width: 30%;
+  margin-right: 5%;
 }
 
 .thumb img {
@@ -704,7 +719,7 @@ iframe {
 }
 
 .thumb:last-child {
-  margin: 0px;
+  margin: 0;
 }
 
 .trainers-items {
@@ -922,6 +937,7 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   width: 550px;
+  max-height: 300px;
   margin: 0px 18px 0px 13px;
   background-color: #222222;
 }
@@ -948,16 +964,18 @@ iframe {
 }
 
 .review-slide-body__subtitle {
+  padding: 0px 0px 32px 0px;
   font-size: 10px;
 }
 
 .review-slide-body__text {
-  padding: 32px 0px 23px 0px;
   font-size: 12px;
   line-height: 2;
+  overflow: auto;
 }
 
 .review-slide-body__stars {
+  padding: 23px 0px 0px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1618,29 +1636,22 @@ body.lock {
   }
 
   .about-intro {
-    padding: 0px 10px 0px 0px;
+    width: 46%;
+    padding: 0px 0px 0px 0px;
   }
 
-  .videos {
-    width: 450px;
+  .about-intro__sub {
+    padding: 25px 0px 25px 0px;
+    max-width: 450px;
+    font-size: 20px;
   }
 
-  iframe {
-    width: 450px;
-    height: 253px;
-  }
-
-  .thumbnails {
-    width: 450px;
+  .about-intro__text {
+    padding: 0px 0px 22px 0px;
   }
 
   .thumb {
-    width: 30%;
     margin-right: 5%;
-  }
-
-  .thumb img {
-    width: 100%;
   }
 
   .trainer {
@@ -1661,7 +1672,6 @@ body.lock {
   }
 
   .review-slide-body__text {
-    padding: 20px 0px 20px 0px;
     font-size: 12px;
   }
 
@@ -1738,43 +1748,7 @@ body.lock {
   }
 
   .about-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 0px;
-  }
-
-  .about-intro {
-    text-align: center;
-    padding: 0px 0px 50px 0px;
-  }
-
-  .about-intro__text {
-    padding: 0px 20px 30px 20px;
-  }
-
-  .about-title {
-    padding: 80px 0px 50px 0px;
-    text-align: center;
-  }
-
-  .about-title__sub {
-    text-align: center;
-  }
-
-  .about-title__title {
-    text-align: center;
-  }
-
-  .about-title::after {
-    margin: 0 auto;
-  }
-
-  .about-video {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1782,19 +1756,55 @@ body.lock {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: 0px 0px 0px 0px;
   }
 
-  .videos {
+  .about-title__sub,
+  .about-title__title {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .about-title::after {
+    margin: 0 auto;
+  }
+
+  .about-intro {
+    width: 80%;
+    padding: 60px 0px 40px 0px;
+    text-align: center;
+  }
+
+  .about-intro__sub {
+    max-width: none;
+    font-size: 14px;
+    padding: 40px 0px 0px 0px;
+  }
+
+  .about-video {
     width: 560px;
   }
 
-  iframe {
+  .videos {
+    width: 100%;
+  }
+
+  .video {
+    width: 100%;
+  }
+
+  .video iframe {
     width: 560px;
     height: 315px;
   }
 
   .thumbnails {
-    width: 560px;
+    width: 100%;
+  }
+
+  .thumb {
+    width: 32%;
+    margin-right: 2%;
   }
 
   .trainer {
@@ -1814,6 +1824,14 @@ body.lock {
 
   .program__title {
     font-size: 16px;
+  }
+
+  .review-slide__image {
+    width: 41.5%;
+  }
+
+  .review-slide__image img {
+    width: 100%;
   }
 
   .review-slide__image {
@@ -1842,7 +1860,6 @@ body.lock {
   }
 
   .review-slide-body__text {
-    padding: 10px 0px 5px 0px;
     font-size: 12px;
     line-height: 1.4;
     letter-spacing: 0.2px;
@@ -1852,6 +1869,7 @@ body.lock {
   }
 
   .review-slide-body__stars {
+    padding: 0px;
     margin: 0px 0px 0px -2px;
   }
 
@@ -1889,6 +1907,14 @@ body.lock {
     width: 70%;
   }
 
+  .contacts-info__phone {
+    font-size: 36px;
+  }
+
+  .contacts-info__text {
+    padding: 40px 0px 80px 0px;
+  }
+
   .footer-content {
     padding: 77px 20px 50px 20px;
     -ms-flex-wrap: wrap;
@@ -1915,6 +1941,10 @@ body.lock {
 
   .tag-list {
     padding: 0px;
+  }
+
+  .rigths {
+    font-size: 12px;
   }
 }
 
@@ -1981,7 +2011,7 @@ body.lock {
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    bottom: 8px;
+    bottom: 9px;
   }
 
   .menu {
@@ -2058,12 +2088,71 @@ body.lock {
     padding: 60px 0px 40px 0px;
   }
 
+  .about-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0px;
+  }
+
+  .about-intro {
+    max-width: 100%;
+    padding: 0px 0px 50px 0px;
+  }
+
+  .about-intro__sub {
+    font-size: 20px;
+    padding: 0px 0px 20px 0px;
+  }
+
   .about-intro__text {
+    padding: 0px 20px 30px 20px;
     line-height: 1.8;
   }
 
+  .about-title {
+    padding: 80px 0px 50px 0px;
+    text-align: center;
+  }
+
+  .about-title__sub {
+    text-align: center;
+  }
+
+  .about-title__title {
+    text-align: center;
+  }
+
+  .about-title::after {
+    margin: 0 auto;
+  }
+
   .about-video {
+    max-width: 100%;
     padding: 0px 0px 30px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .videos {
+    max-width: 520px;
+  }
+
+  iframe {
+    max-width: 520px;
+  }
+
+  .thumbnails {
+    max-width: 520px;
   }
 
   .trainers-items {
@@ -2093,6 +2182,10 @@ body.lock {
     margin: 30px 0px 30px 0px;
     padding: 20px 5px 30px 5px;
     border: 2px solid #212121;
+  }
+
+  .program__icon img {
+    width: 70px;
   }
 
   .program__title {
@@ -2125,7 +2218,7 @@ body.lock {
   }
 
   .review-slide-body__title {
-    padding: 0px 0px 10px 0px;
+    padding: 0px 0px 15px 0px;
     font-size: 18px;
   }
 
@@ -2135,9 +2228,9 @@ body.lock {
   }
 
   .review-slide-body__text {
-    padding: 15px 0px 23px 0px;
     font-size: 14px;
     line-height: 1.6;
+    max-height: 220px;
   }
 
   .review-slide-body__stars {
@@ -2192,11 +2285,6 @@ body.lock {
 
   .blog-items {
     padding: 0px 0px 20px 0px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
 
   .post {
@@ -2272,7 +2360,6 @@ body.lock {
   }
 
   .hero {
-    height: 100vh;
     background: url(../img/hero-bg-320.jpg) no-repeat;
     background-position: top center;
     background-size: cover;
@@ -2281,13 +2368,17 @@ body.lock {
   .hero-title {
     width: 100%;
     text-align: center;
-    padding: 200px 0px 50px 0px;
+    padding: 170px 0px 50px 0px;
   }
 
   .hero-title__text {
     font-size: 16px;
     line-height: 1.5;
     padding: 0px;
+  }
+
+  .section-title {
+    padding: 60px 0 40px 0;
   }
 
   .section-title__sub {
@@ -2298,13 +2389,46 @@ body.lock {
     font-size: 18px;
   }
 
-  .videos {
-    width: 280px;
+  .about-title__title {
+    line-height: 24px;
   }
 
-  iframe {
-    width: 280px;
-    height: 155px;
+  .about-intro {
+    width: 100%;
+    padding: 0px 0px 50px 0px;
+  }
+
+  .about-intro__sub {
+    font-size: 20px;
+    padding: 0px 0px 20px 0px;
+  }
+
+  .about-intro__text {
+    padding: 0px 20px 30px 20px;
+  }
+
+  .about-video {
+    width: 100%;
+    padding: 0px 0px 30px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .videos {
+    width: 100%;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: 290px;
   }
 
   .thumbnails {
@@ -2358,6 +2482,14 @@ body.lock {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+  }
+
+  .review-slide-body__text {
+    text-align: justify;
+  }
+
+  .review-slide-body__stars {
+    padding: 10px 0px 0px 0px;
   }
 
   .price-items {
