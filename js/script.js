@@ -4,7 +4,7 @@ $(document).ready(function () {
 		$('body').toggleClass('lock');
 	});
 	$('.header__burger.active, .menu__link').click(function (event) {
-		$('.header__burger, .menu').removeClass('active');
+		$('.menu, .header__burger').removeClass('active');
 		$('body').removeClass('lock');
 	});
 
